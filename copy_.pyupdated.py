@@ -1,6 +1,4 @@
-import cv2 
 import numpy as np
-import glob 
 import json
 from PIL import Image
 import os
@@ -29,18 +27,16 @@ for filename in os.listdir(image_folder_path):
             
             # Check if the image is the same as the base image
             if np.array_equal(image_array, base_img_array):
-                #print(f'{filename} is the same as the base image')
-                print("image is the same ")
+                print(f'{filename} is the same as the base image')
             else:
-                #print(f'{filename} is different from the base image')
-                print("image is not the same")
-            
+                print(f'{filename} is different from the base image')
+             
             # Add the image array to the list
             image_list.append(image_array.tolist())
 
 
  # Convert the list of image arrays to JSON
-#image_json = json.dumps(image_list)
+image_json = json.dumps(image_list)
     
-    # Echo the JSON to the screen
-#print(image_json)
+# Echo the JSON to the screen
+print(image_json)
